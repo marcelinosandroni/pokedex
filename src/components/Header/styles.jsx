@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import {NavLink} from 'react-router-dom'
+import Link from 'next/link'
 
 export const Container = styled.div`
   width: 100%;
@@ -44,7 +44,7 @@ export const Menu = styled.nav`
   place-items: center;
 `
 
-export const MenuItem = styled(NavLink)`
+export const MenuItem = styled(Link)`
   color: white;
   font-size: 1.4rem;
   text-decoration: none;

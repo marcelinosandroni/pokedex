@@ -1,11 +1,14 @@
 import {PokedexProvider} from 'contexts/pokedex'
 import PokeTheme from 'styles/PokeTheme'
-import '../styles/global'
+import 'styles/global'
+import Layout from 'components/Layout'
 
 const MyApp = ({Component, pageProps}) => (
   <PokeTheme>
     <PokedexProvider>
-      <Component {...pageProps} />
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
     </PokedexProvider>
   </PokeTheme>
 )

@@ -1,5 +1,4 @@
 import {createGlobalStyle, keyframes} from 'styled-components'
-import background from 'assets/images/background.png'
 
 const move = keyframes`
   from {
@@ -24,7 +23,7 @@ const GlobalStyle = createGlobalStyle`
 
     color: black;
 
-    background-image: url(${background});
+    background-image: url('images/background.png');
     background-size: 30%;
     background-repeat: repeat;
     animation: ${move} 90s linear alternate infinite;

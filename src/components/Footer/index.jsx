@@ -1,36 +1,29 @@
-import {Link} from 'react-router-dom'
+import Link from 'next/link'
 import * as S from './styles'
-import logo from '../../assets/images/logo.png'
-import squirtle from '../../assets/images/squirtle-baby.png'
-import charmander from '../../assets/images/charmander-baby.png'
-import bulbasaur from '../../assets/images/bulbasaur-basy.png'
-import beatriz from 'assets/images/beatriz.jpeg'
-import marcelino from 'assets/images/marcelino.jpeg'
-import nathalia from 'assets/images/nathalia.jpeg'
 
 const Footer = () => {
   return (
     <S.Container>
       <S.Footer>
         <S.LogoContainer>
-          <Link to='/'>
-            <S.Logo src={logo} />
+          <Link href='/'>
+            <S.Logo src='images/logo.png' />
           </Link>
         </S.LogoContainer>
         <S.SocialContainer>
           <a href='http://www.facebook.com'>
-            <S.Social src={squirtle} />
+            <S.Social src='images/squirtle-baby.png' />
           </a>
           <a href='http://www.twitter.com'>
-            <S.Social src={charmander} />
+            <S.Social src='images/charmander-baby.png' />
           </a>
           <a href='http://www.instagram.com'>
-            <S.Social src={bulbasaur} />
+            <S.Social src='images/bulbasaur-baby.png' />
           </a>
         </S.SocialContainer>
 
         <S.AuthorsContainer>
-          <S.Authors src={marcelino} />
+          <S.Authors src='images/marcelino.jpeg' />
         </S.AuthorsContainer>
         <S.Message>
           Super Mega Power Pokedex @ 2021 All rights reserved
