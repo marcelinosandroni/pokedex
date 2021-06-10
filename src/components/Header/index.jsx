@@ -1,21 +1,33 @@
-import Link from 'next/link'
+import {NavLink} from 'components/NavLink'
 import * as S from './styles'
 
 const Header = () => {
   return (
     <S.Container>
       <S.Header>
-        <Link href='/'>
+        <NavLink href='/'>
           <S.Logo src='images/logo.png' />
-        </Link>
+        </NavLink>
         <S.Animation src='images/pikachu-correninho.gif' />
         <S.Menu>
-          <S.MenuItem href='/'>Home</S.MenuItem>
-          <S.MenuItem href='/database'>Database</S.MenuItem>
-          <S.MenuItem href='/pokedex'>Pokedex</S.MenuItem>
-          <S.MenuItem href='/types'>Types</S.MenuItem>
-          <S.MenuItem href='/about'>About</S.MenuItem>
-          <S.MenuItem href='/contact'>Contact</S.MenuItem>
+          <NavLink href='/'>
+            <S.MenuItem>Home</S.MenuItem>
+          </NavLink>
+          <NavLink href='/database'>
+            <S.MenuItem>Database</S.MenuItem>
+          </NavLink>
+          <NavLink href='/pokedex'>
+            <S.MenuItem>Pokedex</S.MenuItem>
+          </NavLink>
+          <NavLink href='/types'>
+            <S.MenuItem>Types</S.MenuItem>
+          </NavLink>
+          <NavLink href='/about'>
+            <S.MenuItem>About</S.MenuItem>
+          </NavLink>
+          <NavLink href='/contact'>
+            <S.MenuItem>Contact</S.MenuItem>
+          </NavLink>
         </S.Menu>
       </S.Header>
     </S.Container>

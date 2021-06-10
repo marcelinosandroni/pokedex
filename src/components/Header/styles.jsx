@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import Link from 'next/link'
 
 export const Container = styled.div`
   width: 100%;
@@ -44,12 +43,14 @@ export const Menu = styled.nav`
   place-items: center;
 `
 
-export const MenuItem = styled(Link)`
+export const MenuItem = styled.a`
   color: white;
   font-size: 1.4rem;
   text-decoration: none;
+  cursor: pointer;
+  user-select: none;
 
-  &.active {
+  &[class~='active'] {
     color: ${({theme}) => theme.colors.secondary};
     font-weight: bold;
   }
