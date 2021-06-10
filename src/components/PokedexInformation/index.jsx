@@ -1,6 +1,4 @@
 import * as S from './styles'
-import ash from 'assets/images/vai-la-ash.png'
-import pokeball from 'assets/images/pokebola.png'
 
 const PokedexInformation = ({amount, types}) => {
   console.log('typos: ', types)
@@ -12,12 +10,12 @@ const PokedexInformation = ({amount, types}) => {
         {Object.entries(types).map(i => (
           <S.TypeCounter key={i[0]}>
             <S.Type src={`/typetags/${i[0]}.png`} />
-            <S.Pokeball src={pokeball} />
+            <S.Pokeball src='images/pokebola.png' />
             <S.Count>{i[1]}</S.Count>
           </S.TypeCounter>
         ))}
       </S.TypesCounterContainer>
-      <S.Image src={ash} />
+      <S.Image src='images/vai-la-ash.png' />
     </S.Container>
   )
 }

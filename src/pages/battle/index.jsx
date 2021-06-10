@@ -1,10 +1,10 @@
 import * as S from './styles'
-import battleMusic from 'assets/sounds/battle-music.webm'
 import {useEffect, useRef, useState} from 'react'
 import {pokeapi} from 'hooks/usePokeapi'
 import Player, {playerProps} from '../pokedex/player'
 
-const Battle = ({history}) => {
+const Battle = props => {
+  console.log({props})
   const battleMusicRef = useRef()
   const [player, setPlayer] = useState(playerProps)
   const [enemy, setEnemy] = useState(playerProps)
@@ -12,12 +12,13 @@ const Battle = ({history}) => {
   const enemyRef = useRef(playerProps)
   const turn = useRef('player')
   const [winner, setWinner] = useState(false)
+  const battleMusic = 'sounds/battle-music.webm'
 
   useEffect(() => {
     const enemyNumber = Math.floor(Math.random() * 151 + 1)
     pokeapi(`pokemon/${enemyNumber}`).then(r => {
       enemyRef.current = new Player(r.data, setEnemy, false)
-      playerRef.current = new Player(history.location.state, setPlayer)
+      playerRef.current = new Player(history?.location?.state, setPlayer)
     })
   }, [])
 

@@ -1,5 +1,4 @@
 import styled, {keyframes} from 'styled-components'
-import pokebolaBackground from 'assets/images/pokebola-background.png'
 
 export const CardContainer = styled.div`
   width: 280px;
@@ -8,7 +7,7 @@ export const CardContainer = styled.div`
   display: flex;
   flex-direction: column;
 
-  background: #65d6a5 url(${pokebolaBackground}) no-repeat;
+  background: #65d6a5 url('images/pokebola-background.png') no-repeat;
   background-position: bottom right;
   background-color: ${props => props.typeColor || 'gray'};
 

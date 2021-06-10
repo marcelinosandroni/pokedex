@@ -1,6 +1,5 @@
 import typesColor from 'constants/typesColor'
 import * as S from './styles'
-import pokebola from 'assets/images/pokebola-filter.png'
 
 const Filter = ({filter}) => {
   return (
@@ -14,7 +13,7 @@ const Filter = ({filter}) => {
           placeholder='Name or #ID'
         />
       </S.SearchContainer>
-      <S.Image src={pokebola} />
+      <S.Image src='images/pokebola-filter.png' />
       <S.TypeContainer>
         <S.TypeLabel>Type</S.TypeLabel>
         <S.TypeInput name='type' value={filter.type} onChange={filter.control}>

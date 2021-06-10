@@ -1,5 +1,4 @@
 import * as S from './styles'
-import removeButton from 'assets/images/remove-button.png'
 
 const PokedexCard = ({pokemon, select, remove}) => {
   const removePokemon = e => {
@@ -9,7 +8,7 @@ const PokedexCard = ({pokemon, select, remove}) => {
   return (
     <S.PokedexCardContainer onClick={() => select(pokemon)}>
       <S.Image src={pokemon?.sprites?.front_default} />
-      <S.RemoveIcon src={removeButton} onClick={removePokemon} />
+      <S.RemoveIcon src='images/remove-button.png' onClick={removePokemon} />
     </S.PokedexCardContainer>
   )
 }

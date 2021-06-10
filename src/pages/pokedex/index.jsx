@@ -1,7 +1,6 @@
 import * as S from './styles'
 import {PokedexContext} from 'contexts/pokedex'
 import {useContext, useState} from 'react'
-import pokebola from 'assets/images/pokebola-black.png'
 import PokedexScreen from 'components/PokedexScreen'
 import PokedexInformation from 'components/PokedexInformation'
 import PokedexPokemons from 'components/PokedexPokemons'
@@ -26,7 +25,7 @@ const Pokedex = () => {
   return (
     <S.Container>
       <S.TitleContainer>
-        <S.Image src={pokebola} />
+        <S.Image src='images/pokebola-black.png' />
         <S.Title>Pokedex</S.Title>
       </S.TitleContainer>
       <S.PokedexContainer>

@@ -19,14 +19,14 @@ const Header = () => {
           <NavLink href='/pokedex'>
             <S.MenuItem>Pokedex</S.MenuItem>
           </NavLink>
+          <NavLink href='/battle'>
+            <S.MenuItem>Battle</S.MenuItem>
+          </NavLink>
           <NavLink href='/types'>
             <S.MenuItem>Types</S.MenuItem>
           </NavLink>
           <NavLink href='/about'>
             <S.MenuItem>About</S.MenuItem>
-          </NavLink>
-          <NavLink href='/contact'>
-            <S.MenuItem>Contact</S.MenuItem>
           </NavLink>
         </S.Menu>
       </S.Header>

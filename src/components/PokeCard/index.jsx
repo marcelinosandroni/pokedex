@@ -1,6 +1,4 @@
 import * as S from './styles'
-import pokebola from 'assets/images/pokebola.png'
-import addButton from 'assets/images/add-button.png'
 // import removeButton from 'assets/images/remove-button.png'
 import PokeCardType from 'components/PokeCardType'
 import typesColor from 'constants/typesColor'
@@ -11,6 +9,8 @@ import useGo from 'hooks/useGo'
 const PokeCard = props => {
   const pokedex = useContext(PokedexContext)
   const go = useGo()
+  const pokebola = 'images/pokebola.png'
+  const addButton = 'images/add-button.png'
   const [icon, setIcon] = useState(addButton)
 
   const verifyPokemon = pokemon => pokemon.name === props.name
