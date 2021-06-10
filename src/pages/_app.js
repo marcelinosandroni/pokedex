@@ -1,7 +1,13 @@
-import '../styles/globals.css'
+import {PokedexProvider} from 'contexts/pokedex'
+import PokeTheme from 'styles/PokeTheme'
+import '../styles/global'
 
-function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
-}
+const MyApp = ({Component, pageProps}) => (
+  <PokeTheme>
+    <PokedexProvider>
+      <Component {...pageProps} />
+    </PokedexProvider>
+  </PokeTheme>
+)
 
 export default MyApp
