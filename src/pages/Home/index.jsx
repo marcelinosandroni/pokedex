@@ -1,3 +1,4 @@
+import Head from 'next/head'
 import * as S from './styles'
 import {useTheme} from 'styled-components'
 import pokemonVideo from 'assets/videos/pokemon-opening-season1.webm'
@@ -29,6 +30,11 @@ const Home = () => {
 
   return (
     <S.Container>
+      <Head>
+        <title>Pokedex</title>
+        <meta name='description' content='Best Pokedex of the world!' />
+        <link rel='icon' href='/favicon.ico' />
+      </Head>
       <S.Video autoPlay loop muted src={pokemonVideo} />
       <S.Shadow />
       <S.Content>
