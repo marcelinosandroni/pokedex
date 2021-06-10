@@ -2,7 +2,7 @@ import * as S from './styles'
 import battleMusic from 'assets/sounds/battle-music.webm'
 import {useEffect, useRef, useState} from 'react'
 import {pokeapi} from 'hooks/usePokeapi'
-import Player, {playerProps} from '../Pokedex/player'
+import Player, {playerProps} from '../pokedex/player'
 
 const Battle = ({history}) => {
   const battleMusicRef = useRef()
