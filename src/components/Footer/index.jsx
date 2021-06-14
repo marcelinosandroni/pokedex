@@ -33,32 +33,12 @@ const Footer = () => {
 
         <S.AuthorsContainer>
           <a
-            href='https://www.linkedin.com/in/beatriz-lisboa1/'
-            target='_blank'
-          >
-            <S.Authors
-              src={beatriz}
-              onMouseOver={() => setAuthorName('Beatriz Lisboa')}
-              onMouseOut={() => setAuthorName('')}
-            />
-          </a>
-          <a
             href='https://www.linkedin.com/in/marcelinosandroni/'
             target='_blank'
           >
             <S.Authors
               src={marcelino}
               onMouseOver={() => setAuthorName('Marcelino Sandroni')}
-              onMouseOut={() => setAuthorName('')}
-            />
-          </a>
-          <a
-            href='https://www.linkedin.com/in/nathaliamscardoso/'
-            target='_blank'
-          >
-            <S.Authors
-              src={nathalia}
-              onMouseOver={() => setAuthorName('Nathalia Cardoso')}
               onMouseOut={() => setAuthorName('')}
             />
           </a>
