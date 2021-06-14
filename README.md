@@ -22,7 +22,7 @@ _Ainda em desenvolvimento_
 
 ## Veja Ao Vivo e a cores
 
-**[nicepokedex.surge.sh](https://nicepokedex.surge.sh)**
+**[bestpokedex.surge.sh](https://bestpokedex.surge.sh)**
 
 ## Tecnologias Utilizadas
 
