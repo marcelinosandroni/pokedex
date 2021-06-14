@@ -56,11 +56,11 @@ export const Message = styled.p`
 
 const back = keyframes`
   from {
-   right: -50%;
+   right: -300%;
    opacity: 0;
   }
   to {
-    right: 0%;
+    right: -150%;
     opacity: 1;
   }
 `
@@ -77,14 +77,14 @@ const goOut = keyframes`
 export const AuthorName = styled.p`
   display: grid;
   align-items: end;
-  width: 100%;
+  width: max(250px, 100%);
   height: 100%;
   color: white;
   font-size: 1.5rem;
   word-wrap: nowrap;
-  text-align: center;
+  text-align: right;
   top: 85%;
-  right: -50%;
+  right: -300%;
   ${props =>
     props.show &&
     css`
