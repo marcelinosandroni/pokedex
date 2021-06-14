@@ -1,29 +1,48 @@
-import Link from 'next/link'
+import {Link} from 'react-router-dom'
 import * as S from './styles'
+import logo from '../../assets/images/logo.png'
+import squirtle from '../../assets/images/squirtle-baby.png'
+import charmander from '../../assets/images/charmander-baby.png'
+import bulbasaur from '../../assets/images/bulbasaur-basy.png'
+import beatriz from 'assets/images/beatriz.jpeg'
+import marcelino from 'assets/images/marcelino.jpeg'
+import nathalia from 'assets/images/nathalia.jpeg'
+import {useState} from 'react'
 
 const Footer = () => {
+  const [authorName, setAuthorName] = useState('')
   return (
     <S.Container>
       <S.Footer>
         <S.LogoContainer>
-          <Link href='/'>
-            <S.Logo src='images/logo.png' />
+          <Link to='/'>
+            <S.Logo src={logo} />
           </Link>
         </S.LogoContainer>
         <S.SocialContainer>
           <a href='http://www.facebook.com'>
-            <S.Social src='images/squirtle-baby.png' />
+            <S.Social src={squirtle} />
           </a>
           <a href='http://www.twitter.com'>
-            <S.Social src='images/charmander-baby.png' />
+            <S.Social src={charmander} />
           </a>
           <a href='http://www.instagram.com'>
-            <S.Social src='images/bulbasaur-baby.png' />
+            <S.Social src={bulbasaur} />
           </a>
         </S.SocialContainer>
 
         <S.AuthorsContainer>
-          <S.Authors src='images/marcelino.jpeg' />
+          <a
+            href='https://www.linkedin.com/in/marcelinosandroni/'
+            target='_blank'
+          >
+            <S.Authors
+              src={marcelino}
+              onMouseOver={() => setAuthorName('Marcelino Sandroni')}
+              onMouseOut={() => setAuthorName('')}
+            />
+          </a>
+          <S.AuthorName show={authorName}>{authorName}</S.AuthorName>
         </S.AuthorsContainer>
         <S.Message>
           Super Mega Power Pokedex @ 2021 All rights reserved

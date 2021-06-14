@@ -1,9 +1,11 @@
 import styled, {css} from 'styled-components'
+import screen from 'assets/images/screen.png'
+import {Link} from 'react-router-dom'
 
 export const Container = styled.div`
   width: 48%;
   height: 30vw;
-  background: url('images/screen.png') no-repeat;
+  background: url(${screen}) no-repeat;
   background-size: contain;
   display: flex;
   flex-flow: column;
@@ -57,7 +59,7 @@ export const Image = styled.img`
   }
 `
 
-export const Button = styled.button`
+export const Button = styled(Link)`
   background-color: #333;
   color: gold;
   width: 60%;

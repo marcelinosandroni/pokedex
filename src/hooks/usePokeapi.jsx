@@ -21,9 +21,10 @@ const usePokeapi = (...option) => {
   const getData = useCallback(
     async (url, catchAll, clear) => {
       console.log('getData', url, catchAll)
-      const params = {limit: itemsPage.current}
+      // const params = {limit: itemsPage.current}
       try {
-        let {data: r} = await pokeapi({url, params})
+        let {data: r} = await pokeapi({url})
+        console.log('1poke: ', r)
         next.current = r.next
         // let currentType
         console.log('date ANTES: ', data)
@@ -37,7 +38,11 @@ const usePokeapi = (...option) => {
               } else {
                 console.log(data)
                 console.log(r.results)
-                r = await getAll(url, r.results, catchAll)
+                if (r.results) {
+                  r = await getAll(url, r.results, catchAll)
+                } else {
+                  return setData([r])
+                }
               }
               break
             case 'type':
@@ -56,6 +61,7 @@ const usePokeapi = (...option) => {
         previous.current = next.current
         if (clear) {
           console.log('LImpezinha')
+          console.log(r)
           return setData([...r])
         }
 
@@ -65,12 +71,16 @@ const usePokeapi = (...option) => {
           setData(r)
         } else {
           let PokeWithImages
+          console.log('RETORNO: ', r)
           if (Array.isArray(r)) {
+            console.log('ARRAY!')
             PokeWithImages = r.filter(
               i => i.sprites?.other['official-artwork']?.front_default
             )
+            setData([...data, ...PokeWithImages])
+          } else {
+            setData([...data, PokeWithImages])
           }
-          setData([...data, ...PokeWithImages])
         }
       } catch (e) {
         console.error(e)

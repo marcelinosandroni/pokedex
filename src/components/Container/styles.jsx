@@ -19,4 +19,5 @@ export const Content = styled.div`
     css`
       background-color: ${props.theme.containerBackground};
     `}
+  min-height: calc(100vh - 50px);
 `

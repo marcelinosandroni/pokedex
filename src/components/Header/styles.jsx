@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import {NavLink} from 'react-router-dom'
 
 export const Container = styled.div`
   width: 100%;
@@ -43,14 +44,12 @@ export const Menu = styled.nav`
   place-items: center;
 `
 
-export const MenuItem = styled.a`
+export const MenuItem = styled(NavLink)`
   color: white;
   font-size: 1.4rem;
   text-decoration: none;
-  cursor: pointer;
-  user-select: none;
 
-  &[class~='active'] {
+  &.active {
     color: ${({theme}) => theme.colors.secondary};
     font-weight: bold;
   }

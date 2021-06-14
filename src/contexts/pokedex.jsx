@@ -1,4 +1,4 @@
-import {createContext, useReducer} from 'react'
+import {createContext, useEffect, useReducer} from 'react'
 
 const initialValues = {
   list: [],
@@ -8,13 +8,21 @@ const initialValues = {
 export const PokedexContext = createContext(initialValues)
 
 const pokedexReducer = (pokedex, action) => {
+  const save = value => localStorage.setItem('pokemon', JSON.stringify(value))
+  let p
   switch (action.type) {
     case 'set':
-      return action.pokemon
+      p = action.pokemon
+      save(p)
+      return p
     case 'add':
-      return [...pokedex, action.pokemon]
+      p = [...pokedex, action.pokemon]
+      save(p)
+      return p
     case 'remove':
-      return [...pokedex.filter(i => i.id !== action.pokemon.id)]
+      p = [...pokedex.filter(i => i.id !== action.pokemon.id)]
+      save(p)
+      return p
     default:
       console.error('defina opcao correta', action)
   }
@@ -22,6 +30,12 @@ const pokedexReducer = (pokedex, action) => {
 
 export const PokedexProvider = ({children}) => {
   const [list, dispatch] = useReducer(pokedexReducer, [])
+
+  useEffect(() => {
+    const save = JSON.parse(localStorage.getItem('pokemon'))
+    console.log(save, list)
+    if (!list.length && save) dispatch({type: 'set', pokemon: save})
+  }, [])
 
   return (
     <PokedexContext.Provider value={{list, dispatch}}>

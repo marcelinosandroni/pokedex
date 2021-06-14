@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled, {css, keyframes} from 'styled-components'
 
 export const Container = styled.div`
   width: 100%;
@@ -8,6 +8,8 @@ export const Container = styled.div`
   ${props => props.theme.fixedFooter && 'position: fixed'};
   display: grid;
   place-items: center;
+  position: relative;
+  overflow: hidden;
 `
 
 export const Footer = styled.footer`
@@ -34,6 +36,7 @@ export const Social = styled.img`
 export const AuthorsContainer = styled.div`
   display: flex;
   gap: 2.5rem;
+  position: relative;
 `
 
 export const Authors = styled.img`
@@ -49,4 +52,48 @@ export const Message = styled.p`
   text-align: center;
   font-size: 1.2rem;
   color: white;
+`
+
+const back = keyframes`
+  from {
+   right: -300%;
+   opacity: 0;
+  }
+  to {
+    right: -150%;
+    opacity: 1;
+  }
+`
+
+const goOut = keyframes`
+  from {
+    right: 0%;
+  }
+  to {
+    right: -50%;
+  }
+`
+
+export const AuthorName = styled.p`
+  display: grid;
+  align-items: end;
+  width: max(250px, 100%);
+  height: 100%;
+  color: white;
+  font-size: 1.5rem;
+  word-wrap: nowrap;
+  text-align: right;
+  top: 85%;
+  right: -300%;
+  ${props =>
+    props.show &&
+    css`
+      animation: ${back} 0.5s forwards;
+    `};
+  /* ${props =>
+    !props.show &&
+    css`
+      animation: ${goOut} 1s forwards;
+    `}; */
+  position: absolute;
 `

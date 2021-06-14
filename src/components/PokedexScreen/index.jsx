@@ -1,4 +1,4 @@
-import Link from 'next/link'
+import {Link, NavLink} from 'react-router-dom'
 import * as S from './styles'
 
 const PokedexScreen = ({pokemon}) => {
@@ -29,9 +29,7 @@ const PokedexScreen = ({pokemon}) => {
             .front_default
         }
       />
-      <Link href={`/battle/${pokemon}`} as='/battle'>
-        <S.Button>Battle</S.Button>
-      </Link>
+      <S.Button to={{pathname: '/battle', state: pokemon}}>Battle</S.Button>
     </S.Container>
   )
 }

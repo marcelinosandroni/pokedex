@@ -1,33 +1,25 @@
-import {NavLink} from 'components/NavLink'
+import {NavLink} from 'react-router-dom'
+import pikachu from '../../assets/images/pikachu-correninho.gif'
+import logo from '../../assets/images/logo.png'
 import * as S from './styles'
 
 const Header = () => {
   return (
     <S.Container>
       <S.Header>
-        <NavLink href='/'>
-          <S.Logo src='images/logo.png' />
+        <NavLink exact to='/'>
+          <S.Logo src={logo} />
         </NavLink>
-        <S.Animation src='images/pikachu-correninho.gif' />
+        <S.Animation src={pikachu} />
         <S.Menu>
-          <NavLink href='/'>
-            <S.MenuItem>Home</S.MenuItem>
-          </NavLink>
-          <NavLink href='/database'>
-            <S.MenuItem>Database</S.MenuItem>
-          </NavLink>
-          <NavLink href='/pokedex'>
-            <S.MenuItem>Pokedex</S.MenuItem>
-          </NavLink>
-          <NavLink href='/battle'>
-            <S.MenuItem>Battle</S.MenuItem>
-          </NavLink>
-          <NavLink href='/types'>
-            <S.MenuItem>Types</S.MenuItem>
-          </NavLink>
-          <NavLink href='/about'>
-            <S.MenuItem>About</S.MenuItem>
-          </NavLink>
+          <S.MenuItem exact to='/'>
+            Home
+          </S.MenuItem>
+          <S.MenuItem to='/database'>Database</S.MenuItem>
+          <S.MenuItem to='/pokedex'>Pokedex</S.MenuItem>
+          <S.MenuItem to='/types'>Types</S.MenuItem>
+          <S.MenuItem to='/battle'>Battle</S.MenuItem>
+          <S.MenuItem to='/about'>About</S.MenuItem>
         </S.Menu>
       </S.Header>
     </S.Container>
